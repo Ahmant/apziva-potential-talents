@@ -64,6 +64,9 @@ Predict how fit the candidate is based on their available information (variable 
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │
+    │   ├── app            <- streamlit app
+    │   │   └── main.py
+    │   │
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
     │   │

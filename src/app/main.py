@@ -111,8 +111,12 @@ st.markdown(hide_table_row_index_style, unsafe_allow_html=True)
 st.title('Apziva - Potentiel Talents')
 
 # Sidebar
+## Github
+st.sidebar.subheader('Github')
+st.sidebar.write("[readme.md](https://github.com/Ahmant/apziva-potential-talents/tree/main#readme)")
 ## Abbreviations to replace
 st.sidebar.subheader('Abbreviations to replace')
+st.sidebar.write('They are automatically replaced')
 abbreviations_table_data = pd.DataFrame(columns=('key', 'value'))
 for key, value in abbreviations_to_replace.items():
     abbreviations_table_data.loc[len(abbreviations_table_data)] = {'key': key, 'value': value}
@@ -128,6 +132,7 @@ if submitted:
         # Get search results
         dataset = encode_and_get_similarity(dataset, [query], search_column, 'similarity')
         update_session_dataset(dataset)
+st.write('"Star (checkbox)" candidates and re-submit to re-rank based')
 
 dataset = dataset.sort_values(['similarity', 'starred'], ascending=False)
 update_session_dataset(
